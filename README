@@ -29,6 +29,9 @@ Notes:
 
 1.2  To build a single extension (e.g. extension xxx):
 
+     Check the order of the build and extensions dependancies in the
+     epics/config/CONFIG_EXTENSIONS file.
+
      cd epics/extensions/src/xxx
 
      gmake            - To build and install the xxx extension.
