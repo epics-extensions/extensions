@@ -12,9 +12,9 @@
 -include $(TOP)/configure/os/CONFIG_SITE.Common.Common
 
 X11_LIB=/usr/X11R6/lib
-X11_INC=/usr/X11R6/include/X11
-MOTIF_LIB=/sw/lib
-MOTIF_INC=/sw/Xm/include
+X11_INC=/usr/X11R6/include
+MOTIF_LIB=/usr/X11R6/lib
+MOTIF_INC=/usr/X11R6/Xm/include
 
 TK_TCL = /sw/lib
 
