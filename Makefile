@@ -4,7 +4,10 @@
 # Makefile for building subdirectories
 #
 # $Log$
-# Revision 1.7  1995/02/13 15:12:25  jba
+# Revision 1.8  1995/03/07 15:33:51  jba
+# Fixed tar rule.
+#
+# Revision 1.7  1995/02/13  15:12:25  jba
 # Added Cleaning comment and rm of include directory
 #
 # Revision 1.6  1995/01/25  15:31:45  jba
@@ -34,6 +37,8 @@ DIRS = src
 
 include $(EPICS)/config/RULES_DIRS
 
+RELS = extensions
+
 uninstall:
 	@echo "TOP: Uninstalling templates,includes,libraries, and executables"
 	@rm -rf ./bin/* ./lib/* ./templates/* ./include/*\
@@ -47,7 +52,7 @@ tar:
 	cd ${EPICS}; \
     ls extensions/README* | xargs tar cf ${RELS}.Tar; \
 	find extensions/src -name CVS -prune -o ! -type d -print \
-		| grep -v "/O\..*$$" | xargs tar rf $*.Tar 
+		| grep -v "/O\..*$$" | xargs tar rf ${RELS}.Tar 
 
 tar.%:
 	@echo "TOP: Creating ../$*.Tar file..."; \
