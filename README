@@ -6,17 +6,9 @@ EPICS R3.12 Extensions Notes and Build Instructions.
 
 Notes:
 
-1. Before you can build or really use EPICS extensions, you must set your
-   path properly:
-
-   set path = ( $path EPICS/base/tools EPICS/base/bin/HOST_ARCH \
-                EPICS/extensions/bin/HOST_ARCH )
-
-      e.g.:
-
-   set path = ( $path /home/epics/base/tools /home/epics/base/bin/sun4
-                /home/epics/extensions/bin/sun4 )
-
+1. You must properly set the environemnt variable HOST_ARCH. The
+   epics/startup/HostArch script file has been provided to set HOST_ARCH.
+ 
 2. EPICS base must be configured and built prior to building an
        extension
 
