@@ -1,10 +1,12 @@
-<<<<<<< Makefile
 #
 # $Id$
 #
 # Makefile for building subdirectories
 #
 # $Log$
+# Revision 1.7  1999/07/16 20:43:48  jba
+# Removed invalid line.
+#
 # Revision 1.6  1999/04/16 20:12:01  jba
 # Changed to Makefile.Host method.
 #
