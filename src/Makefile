@@ -1,16 +1,5 @@
-#
-# $Id$
-#
-# Makefile for building subdirectories
-#
-# $Log$
-# Revision 1.2  1994/09/21 22:18:29  jba
-# New definitions in CONFIG* files
-#
-#
-
-EPICS = ../..
-include $(EPICS)/config/CONFIG_EXTENSIONS
-
-include $(EPICS)/config/RULES_DIRS
-
+TOP = ..
+include $(TOP)/config/CONFIG_EXTENSIONS
+DIRS += dbStaticJava
+DIRS += JDCT
+include $(TOP)/config/RULES_DIRS
