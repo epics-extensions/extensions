@@ -39,7 +39,7 @@ $(PYTHON_PACKAGE_PTH):
 	@echo $(PYTHON_PACKAGE) > $@
 
 %_wrap.c: ../%.i
-	$(SWIG) -python $<
+	$(SWIG) -python -o $@ $< 
 
 clean::
 	@$(RM) *.py *.so *.pth
