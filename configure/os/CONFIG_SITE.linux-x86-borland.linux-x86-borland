@@ -29,9 +29,6 @@ QUESTWIN =
 TK_TCL = /usr/lib
 IDL =
 
-JAVA_DIR=/usr/local/java
-JAVA_INC=$(JAVA_DIR)/include
-
 INTERVIEWS_BIN=/usr/local/interviews/bin/O.Linux
 
 IV_INC=/usr/local/interviews/include

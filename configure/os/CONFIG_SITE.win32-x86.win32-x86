@@ -73,9 +73,6 @@ endif
 MOTIF_LIB = $(X11_LIB)
 MOTIF_INC = $(X11_INC)
 
-JAVA_DIR = c:\\jdk1.3
-JAVA_INC = $(JAVA_DIR)/include
-
 TCL = c:\\Tcl
 TK_LIB = $(TCL)/lib
 TK_INC = $(TCL)/include
