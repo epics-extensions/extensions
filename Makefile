@@ -4,7 +4,10 @@
 # Makefile for building subdirectories
 #
 # $Log$
-# Revision 1.5  1995/01/10 22:08:58  jba
+# Revision 1.6  1995/01/25 15:31:45  jba
+# Added templates to uninstall
+#
+# Revision 1.5  1995/01/10  22:08:58  jba
 # Removed pruning of SCCS dirs for tar and tar.% targets
 #
 # Revision 1.4  1995/01/04  21:01:43  jba
@@ -29,8 +32,8 @@ DIRS = src
 include $(EPICS)/config/RULES_DIRS
 
 uninstall:
-	@echo "TOP: Uninstalling libraries and executables"
-	@rm -rf ./bin/* ./lib/* \
+	@echo "TOP: Uninstalling templates,libraries and executables"
+	@rm -rf ./bin/* ./lib/* ./templates/* \
 
 cleanAll:
 	@find src -type d -name 'O.*' -prune -exec rm -rf {} \;
