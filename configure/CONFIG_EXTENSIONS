@@ -25,6 +25,7 @@ ifneq ($(EPICS_HOST_ARCH),$(T_A))
 endif
 
 #  Site specific host-target combination definitions
+-include $(TOP)/configure/os/CONFIG.$(EPICS_HOST_ARCH).$(T_A)
 -include $(TOP)/configure/os/CONFIG_SITE.$(EPICS_HOST_ARCH).$(T_A)
 
 -include $(TOP)/configure/O.$(T_A)/CONFIG_APP_INCLUDE
