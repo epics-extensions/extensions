@@ -1,0 +1,86 @@
+$Id$
+
+----------------------------------------------------------------------------
+EPICS R3.12 Extensions Notes and Build Instructions.
+----------------------------------------------------------------------------
+
+Notes:
+
+1. Before you can build or really use EPICS extensions, you must set your
+   path properly:
+
+   set path = ( $path EPICS/base/tools EPICS/base/bin/HOST_ARCH \
+                EPICS/extensions/bin/HOST_ARCH )
+
+      e.g.:
+
+   set path = ( $path /home/epics/base/tools /home/epics/base/bin/sun4
+                /home/epics/extensions/bin/sun4 )
+
+2. EPICS base must be configured and built prior to building an
+       extension
+
+3. Your epics/config directory must be present and the files properly
+   configured prior to building an extension.
+
+----------------------------------------------------------------------------
+     Part 1 - Building EPICS Extensions
+----------------------------------------------------------------------------
+
+1.1  To build all extensions present in your epics tree:
+
+     cd epics/extensions
+     gmake            - To build and install all extensions.
+     gmake clean      - To clean temporary object files.  Clean will
+                        remove files from ALL O.ARCH dirs.
+
+1.2  To build a single extension (e.g. extension xxx):
+
+     cd epics/extensions/src/xxx
+
+     gmake            - To build and install the xxx extension.
+     gmake install    - To build and install the xxx extension.
+     gmake clean      - To clean temporary object files.  Clean will
+                        remove files from ALL O.ARCH dirs.
+     gmake build      - To build the extension.
+     gmake depends    - To genetate the .DEPENDS dependencies file.
+
+1.3  To create an extension tar file
+     These Tar files will be created in the directory ABOVE extensions.
+     and are then meant to be untarred at that level.
+     They do NOT include the "epics/config" directory.
+
+     cd epics/extensions
+     gmake tar.xxx    - Will create an ../xxx.Tar file containing the xxx 
+                        extension
+     gmake tar        - Will create an ../extension.Tar file containing all
+                        extensions in your extensions tree.
+
+1.4  "Partial" build commands:
+
+     gmake clean.sun4        - Cleans sun4 binaries in O.sun4 dirs only
+                               (all extensions)..
+     gmake install.sun4      - Builds sun4 only (all extensions).
+     gmake install.mv167     - Builds mv167 only (all extensions).
+
+
+
+NOTES:
+     1. Binaries are installed into the extensions/bin/ARCH and 
+        extensions/lib/ARCH directories. 
+
+     3. During a normal build (a "gmake" or "gmake install"), the "depends"
+        dependency will NOT be invoked.  Only if "gmake depends" is run
+        explicitly will dependencies be generated.
+     
+     4. Temporary objects are stored in src/xxx/O.ARCH, This allows objects
+        for multiple architectures to be maintained at the same time.
+        While developing source for a specific source file, merely cd
+        src/DIR/O.ARCH, and invoke "gmake":
+
+        cd epics/extensions/src/alh/O.sun4
+        gmake alh.o
+
+        The above example instructs make to build alh.o for the
+        sun4 target.
+
