@@ -4,6 +4,9 @@
 # Makefile for building subdirectories
 #
 # $Log$
+# Revision 1.13  1996/03/06 18:48:43  jba
+# Changed definition of DIR_TYPE.
+#
 # Revision 1.12  1996/03/04 17:35:40  jba
 # Makefile now includes RULES_DIRS
 #
@@ -44,7 +47,7 @@
 
 EPICS = ..
 include $(EPICS)/config/CONFIG_EXTENSIONS
-DIR_TYPE = EXTTOP
+DIR_TYPE = DIR_TYPE_EXTTOP
 include $(EPICS)/config/RULES_DIRS
 
 DIRS = src
