@@ -4,7 +4,10 @@
 # Makefile for building subdirectories
 #
 # $Log$
-# Revision 1.6  1995/01/25 15:31:45  jba
+# Revision 1.7  1995/02/13 15:12:25  jba
+# Added Cleaning comment and rm of include directory
+#
+# Revision 1.6  1995/01/25  15:31:45  jba
 # Added templates to uninstall
 #
 # Revision 1.5  1995/01/10  22:08:58  jba
@@ -32,11 +35,12 @@ DIRS = src
 include $(EPICS)/config/RULES_DIRS
 
 uninstall:
-	@echo "TOP: Uninstalling templates,libraries and executables"
-	@rm -rf ./bin/* ./lib/* ./templates/* \
+	@echo "TOP: Uninstalling templates,includes,libraries, and executables"
+	@rm -rf ./bin/* ./lib/* ./templates/* ./include/*\
 
 cleanAll:
-	@find src -type d -name 'O.*' -prune -exec rm -rf {} \;
+	@echo "TOP: Cleaning"; \
+	find src -type d -name 'O.*' -prune -exec rm -rf {} \;
 
 tar:
 	@echo "TOP: Creating ../extensions.Tar file..."; \
