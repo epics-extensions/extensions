@@ -1,0 +1,10 @@
+# $Id$
+
+# If you don't want to install into $(TOP) dir then
+# define INSTALL_LOCATION_EXTENSIONS here
+#INSTALL_LOCATION_EXTENSIONS=<fullpathname>
+
+# Location of external products
+EPICS_BASE=G:/epics/base
+EPICS_EXTENSIONS = G:/epics/extensions
+
