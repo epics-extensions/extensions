@@ -76,3 +76,4 @@ endif
 PYTHON_DIR=/opt/local/lib/python2.2
 PYTHON_INCLUDE=/opt/local/include/python2.2
 
+JAVA_DIR=/usr/java
