@@ -4,7 +4,10 @@
 # Makefile for building subdirectories
 #
 # $Log$
-# Revision 1.10  1995/08/31 21:09:59  jba
+# Revision 1.11  1995/10/02 17:26:35  jba
+# Removed extra quote marks.
+#
+# Revision 1.10  1995/08/31  21:09:59  jba
 # Modified cleanAll and uninstall to do only the BUILD_ARCHS dirs
 #
 # Revision 1.9  1995/04/11  15:14:16  jba
@@ -47,12 +50,12 @@ RELS = extensions
 
 uninstall:
 	@(for ARCH in ${BUILD_ARCHS}; do    \
-		${MAKE} $@.$${ARCH}"; \
+		${MAKE} $@.$${ARCH}; \
 	done)
 
 cleanAll:
 	@(for ARCH in ${BUILD_ARCHS}; do    \
-		${MAKE} $@.$${ARCH}"; \
+		${MAKE} $@.$${ARCH}; \
 	done)
 
 tar:
