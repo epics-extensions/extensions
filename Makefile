@@ -2,6 +2,6 @@
 
 TOP = .
 include $(TOP)/config/CONFIG_EXTENSIONS
-DIRS = src
+DIRS = $(wildcard configure src)
 include $(TOP)/config/RULES_TOP
 
