@@ -4,7 +4,10 @@
 # Makefile for building subdirectories
 #
 # $Log$
-# Revision 1.8  1995/03/07 15:33:51  jba
+# Revision 1.9  1995/04/11 15:14:16  jba
+# Put verbose on tar command and added top level Makefile to tar files.
+#
+# Revision 1.8  1995/03/07  15:33:51  jba
 # Fixed tar rule.
 #
 # Revision 1.7  1995/02/13  15:12:25  jba
@@ -50,14 +53,16 @@ cleanAll:
 tar:
 	@echo "TOP: Creating ../extensions.Tar file..."; \
 	cd ${EPICS}; \
-    ls extensions/README* | xargs tar cf ${RELS}.Tar; \
+    ls extensions/README* | xargs tar vcf ${RELS}.Tar; \
+    ls extensions/Makefile* | xargs tar vrf ${RELS}.Tar; \
 	find extensions/src -name CVS -prune -o ! -type d -print \
-		| grep -v "/O\..*$$" | xargs tar rf ${RELS}.Tar 
+		| grep -v "/O\..*$$" | xargs tar vrf ${RELS}.Tar 
 
 tar.%:
 	@echo "TOP: Creating ../$*.Tar file..."; \
 	cd ${EPICS}; \
-    ls extensions/README* | xargs tar cf $*.Tar; \
+    ls extensions/README* | xargs tar vcf $*.Tar; \
+    ls extensions/Makefile* | xargs tar vrf ${RELS}.Tar; \
 	find extensions/src/$* -name CVS -prune -o ! -type d -print \
-		| grep -v "/O\..*$$" | xargs tar rf $*.Tar 
+		| grep -v "/O\..*$$" | xargs tar vrf $*.Tar 
 
