@@ -4,7 +4,10 @@
 # Makefile for building subdirectories
 #
 # $Log$
-# Revision 1.9  1995/04/11 15:14:16  jba
+# Revision 1.10  1995/08/31 21:09:59  jba
+# Modified cleanAll and uninstall to do only the BUILD_ARCHS dirs
+#
+# Revision 1.9  1995/04/11  15:14:16  jba
 # Put verbose on tar command and added top level Makefile to tar files.
 #
 # Revision 1.8  1995/03/07  15:33:51  jba
@@ -43,12 +46,14 @@ include $(EPICS)/config/RULES_DIRS
 RELS = extensions
 
 uninstall:
-	@echo "TOP: Uninstalling templates,includes,libraries, and executables"
-	@rm -rf ./bin/* ./lib/* ./templates/* ./include/*\
+	@(for ARCH in ${BUILD_ARCHS}; do    \
+		${MAKE} $@.$${ARCH}"; \
+	done)
 
 cleanAll:
-	@echo "TOP: Cleaning"; \
-	find src -type d -name 'O.*' -prune -exec rm -rf {} \;
+	@(for ARCH in ${BUILD_ARCHS}; do    \
+		${MAKE} $@.$${ARCH}"; \
+	done)
 
 tar:
 	@echo "TOP: Creating ../extensions.Tar file..."; \
@@ -57,6 +62,14 @@ tar:
     ls extensions/Makefile* | xargs tar vrf ${RELS}.Tar; \
 	find extensions/src -name CVS -prune -o ! -type d -print \
 		| grep -v "/O\..*$$" | xargs tar vrf ${RELS}.Tar 
+
+uninstall.%:
+	@echo "TOP: Uninstalling $*"
+	@rm -rf ./bin/$* ./bin/appSR ./lib/$* ./templates/* ./include/*\;
+
+cleanAll.%:
+	@echo "TOP: Cleaning $* "
+	@find src -type d -name "O.$*" -prune -exec rm -rf {} \;
 
 tar.%:
 	@echo "TOP: Creating ../$*.Tar file..."; \
