@@ -21,3 +21,5 @@ TK_TCL = /sw/lib
 PYTHON_DIR=/usr/lib/python2.2
 PYTHON_INCLUDE=/usr/include/python2.2
 
+JAVA_DIR=/System/Library/Frameworks/JavaVM.framework/Home
+
