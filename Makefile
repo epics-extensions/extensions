@@ -4,7 +4,10 @@
 # Makefile for building subdirectories
 #
 # $Log$
-# Revision 1.11  1995/10/02 17:26:35  jba
+# Revision 1.12  1996/03/04 17:35:40  jba
+# Makefile now includes RULES_DIRS
+#
+# Revision 1.11  1995/10/02  17:26:35  jba
 # Removed extra quote marks.
 #
 # Revision 1.10  1995/08/31  21:09:59  jba
@@ -41,44 +44,7 @@
 
 EPICS = ..
 include $(EPICS)/config/CONFIG_EXTENSIONS
-
-DIRS = src
-
+DIR_TYPE = EXTTOP
 include $(EPICS)/config/RULES_DIRS
 
-RELS = extensions
-
-uninstall:
-	@(for ARCH in ${BUILD_ARCHS}; do    \
-		${MAKE} $@.$${ARCH}; \
-	done)
-
-cleanAll:
-	@(for ARCH in ${BUILD_ARCHS}; do    \
-		${MAKE} $@.$${ARCH}; \
-	done)
-
-tar:
-	@echo "TOP: Creating ../extensions.Tar file..."; \
-	cd ${EPICS}; \
-    ls extensions/README* | xargs tar vcf ${RELS}.Tar; \
-    ls extensions/Makefile* | xargs tar vrf ${RELS}.Tar; \
-	find extensions/src -name CVS -prune -o ! -type d -print \
-		| grep -v "/O\..*$$" | xargs tar vrf ${RELS}.Tar 
-
-uninstall.%:
-	@echo "TOP: Uninstalling $*"
-	@rm -rf ./bin/$* ./bin/appSR ./lib/$* ./templates/* ./include/*\;
-
-cleanAll.%:
-	@echo "TOP: Cleaning $* "
-	@find src -type d -name "O.$*" -prune -exec rm -rf {} \;
-
-tar.%:
-	@echo "TOP: Creating ../$*.Tar file..."; \
-	cd ${EPICS}; \
-    ls extensions/README* | xargs tar vcf $*.Tar; \
-    ls extensions/Makefile* | xargs tar vrf ${RELS}.Tar; \
-	find extensions/src/$* -name CVS -prune -o ! -type d -print \
-		| grep -v "/O\..*$$" | xargs tar vrf $*.Tar 
-
+DIRS = src
