@@ -7,13 +7,14 @@ EPICS R3.12 Extensions Notes and Build Instructions.
 Notes:
 
 1. You must properly set the environemnt variable HOST_ARCH. The
-   epics/startup/HostArch script file has been provided to set HOST_ARCH.
+   epics/startup/HostArch script file is provided with EPICS base
+   to set HOST_ARCH.
  
 2. EPICS base must be configured and built prior to building an
        extension
 
-3. Your epics/config directory must be present and the files properly
-   configured prior to building an extension.
+3. Your epics/config directory must be present and the CONFIG_SITE* files
+   properly configured prior to building an extension.
 
 ----------------------------------------------------------------------------
      Part 1 - Building EPICS Extensions
@@ -24,7 +25,7 @@ Notes:
      cd epics/extensions
      gmake            - To build and install all extensions.
      gmake clean      - To clean temporary object files.  Clean will
-                        remove files from ALL O.ARCH dirs.
+                        remove ALL O.<host_arch> subdirectories.
 
 1.2  To build a single extension (e.g. extension xxx):
 
@@ -33,9 +34,9 @@ Notes:
      gmake            - To build and install the xxx extension.
      gmake install    - To build and install the xxx extension.
      gmake clean      - To clean temporary object files.  Clean will
-                        remove files from ALL O.ARCH dirs.
+                        remove ALL O.<host_arch> subdirectoriess.
      gmake build      - To build the extension.
-     gmake depends    - To genetate the .DEPENDS dependencies file.
+     gmake depends    - To generate the .DEPENDS dependencies file.
 
 1.3  To create an extension tar file
      These Tar files will be created in the directory ABOVE extensions.
@@ -58,21 +59,20 @@ Notes:
 
 
 NOTES:
-     1. Binaries are installed into the extensions/bin/ARCH and 
-        extensions/lib/ARCH directories. 
+     1. Binaries are installed into the extensions/bin/<host_arch> and 
+        extensions/lib/<host_arch> directories. 
 
      3. During a normal build (a "gmake" or "gmake install"), the "depends"
-        dependency will NOT be invoked.  Only if "gmake depends" is run
-        explicitly will dependencies be generated.
+        dependency file will NOT be created.  Only if "gmake depends" is run
+        explicitly will dependency files be generated.
      
-     4. Temporary objects are stored in src/xxx/O.ARCH, This allows objects
-        for multiple architectures to be maintained at the same time.
-        While developing source for a specific source file, merely cd
-        src/DIR/O.ARCH, and invoke "gmake":
+     4. Temporary objects are stored in src/xxx/O.<host_arch>, This allows
+	objects for multiple host architectures to be maintained in the same
+	tree structure at the same time. While developing source for a
+	specific source file, merely cd src/DIR/O.<host_arch> directory, and
+	invoke "gmake <target filename>" e.g.
+        	cd epics/extensions/src/alh/O.sun4
+        	gmake alh.o
 
-        cd epics/extensions/src/alh/O.sun4
-        gmake alh.o
-
-        The above example instructs make to build alh.o for the
-        sun4 target.
+        The above example instructs make to build alh.o.
 
