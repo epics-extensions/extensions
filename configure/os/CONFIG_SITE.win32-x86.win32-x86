@@ -113,3 +113,6 @@ SCIPLOT = ../../src/medmdev/medm
 ZLIB_CFLAG = -DzLib
 ZLIB_PROD_LIB = z
 z_DIR = $(EPICS_EXTENSIONS_LIB)
+
+CLAPACK_INCLUDE = c:/CLAPACK/include
+CLAPACK_LIB = c:/CLAPACK/lib
