@@ -1,7 +1,7 @@
 # $Id$
 
 TOP = .
-include $(TOP)/config/CONFIG_EXTENSIONS
+include $(TOP)/configure/CONFIG
 DIRS = $(wildcard configure src)
 include $(TOP)/config/RULES_TOP
 
