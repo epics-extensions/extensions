@@ -124,6 +124,8 @@ DIRS += $(SCOPEUTIL)
 DIRS += $(SDDSIDL)
 DIRS += $(STRIPTOOL)
 
+DIRS := $(wildcard $(DIRS))
+
 include $(TOP)/configure/RULES_DIRS
 
 #
