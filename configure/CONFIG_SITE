@@ -10,3 +10,5 @@ CROSS_COMPILER_TARGET_ARCHS =
 # define INSTALL_LOCATION here
 #INSTALL_LOCATION=<fullpathname>
 
+# To create a shared library set SHARED_LIBRARIES to YES in Makefile
+SHARED_LIBRARIES = NO
