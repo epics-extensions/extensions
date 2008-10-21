@@ -12,3 +12,7 @@
 -include $(TOP)/configure/os/CONFIG_SITE.Common.Common
 
 -include $(TOP)/configure/os/CONFIG_SITE.solaris-sparc.solaris-sparc
+
+XRTGRAPH =
+SCIPLOT=YES
+
