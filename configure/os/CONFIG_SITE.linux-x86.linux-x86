@@ -32,15 +32,14 @@ MOTIF_INC=/usr/include
 OPENWIN =
 WINGZ =
 MATHEMATICA =
-SCIPLOT=YES
-XRTGRAPH =
+#SCIPLOT=YES
 QUESTWIN =
 TK_TCL = /usr/lib
 IDL =
 
 #JAVA_DIR=/usr/local/java
-JAVA_DIR=/usr/java/j2sdk1.4.1
-JAVA_INC=$(JAVA_DIR)/include
+#JAVA_DIR=/usr/java/j2sdk1.4.1
+JAVA_DIR=/usr
 
 INTERVIEWS_BIN=/usr/local/interviews/bin/O.Linux
 
@@ -62,3 +61,8 @@ PYTHON_INCLUDE=/usr/include/python2.2
 CLAPACK_LIB    = /usr/local/oag/3rdParty/ATLAS/Linux_Core2Duo32SSE3/lib
 ATLAS_LIB      = /usr/local/oag/3rdParty/ATLAS/Linux_Core2Duo32SSE3/lib
 ATLAS_INCLUDE  = /usr/local/oag/3rdParty/ATLAS/Linux_Core2Duo32SSE3/include
+
+# Define XRTGRAPH_EXTENSIONS = YES only if using XRT/graph 3.x
+#   and you want the extensions for MEDM
+XRTGRAPH_EXTENSIONS = YES
+XRTGRAPH = /usr/local/xrtgraph
