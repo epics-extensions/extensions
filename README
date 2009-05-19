@@ -139,7 +139,8 @@ Extensions build prerequisites
           The EPICS_BASE definition in extensions/configure/RELEASE file must
           point to the <top> of your built EPICS base.
 
-        configure/CONFIG_SITE files
+        configure/CONFIG_SITE file
+        configure/os/CONFIG_SITE* files
 
           Your extensions/configure directory must be present and the 
           CONFIG_SITE* files properly configured prior to building an extension.
