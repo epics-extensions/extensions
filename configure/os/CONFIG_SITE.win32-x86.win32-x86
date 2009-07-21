@@ -167,9 +167,6 @@ ifeq ($(EXCEED),Exceed7.10)
   EXCEED_CFLAGS=/DXMSTATIC /DMOTIFAPP
 endif
 ifeq ($(EXCEED),Exceed10.0)
-  # Cant get the following line to work -----------------------------
-  #XDK="\"C:/Program Files/Hummingbird/Connectivity/10.00/Exceed/XDK"\"
-  # The following line works -----------------------------
   XDK=C:/Exceed10.0/xdk
   X11_LIB = $(XDK)/lib
   X11_INC = $(XDK)/include
@@ -183,8 +180,7 @@ ifeq ($(EXCEED),Exceed10.0)
   EXCEED_CFLAGS=/DXMSTATIC /DMOTIFAPP
 endif
 ifeq ($(EXCEED),Exceed12.0)
-  #XDK=C:/"Program Files"/Hummingbird/Connectivity/12.00/Exceed/XDK
-  XDK=C:/Exceed10.0/XDK
+  XDK=C:/Exceed12.0/XDK
   X11_LIB = $(XDK)/lib
   X11_INC = $(XDK)/include
   EXCEED_XLIBS=XmStatic XmStatXt Xlib HCLXmu
