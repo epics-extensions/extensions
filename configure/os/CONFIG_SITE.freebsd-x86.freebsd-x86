@@ -13,4 +13,3 @@ X11_LIB = /usr/local/lib
 X11_INC = /usr/local/include
 MOTIF_INC = $(X11_INC)
 MOTIF_LIB = $(X11_LIB)
-
