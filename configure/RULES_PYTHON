@@ -41,8 +41,13 @@ $(PYTHON_PACKAGE_PTH):
 %_wrap.c: ../%.i
 	$(SWIG) -python -o $@ $< 
 
+ifdef BASE_3_15
+clean:
+else
 clean::
+endif
 	@$(RM) *.py *.so *.pth
+
 
 endif
 endif
