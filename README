@@ -55,71 +55,48 @@ EPICS extensions setup
 
   Download desired extensions:
 
-    Many extensions are available from WWW pages at various EPICS
-    sites.
+    Many extensions are available from WWW pages at various EPICS sites.
 
   Unzip and untar extensions:
 
-    Unzip and untar the extension distribution files to the 
-    extensions/src directory. Use WinZip on Windows systems.
+    Unzip and untar the extension distribution files to the extensions/src 
+    directory. Use WinZip on Windows systems.
 
 Extension build software requirements:
 
         To build EPICS base and extensions you will need following items 
         installed.  Some items can be obtained via links from the APS EPICS 
         software distribution web page - 
-                http://www.aps.anl.gov/xfd/WWW/xfd/SoftDist/Welcome.html
+                http://www.aps.anl.gov/epics/download/extensions/index.php
 
         You may not have to build extensions at your site. Built extensions for 
         Win32 are available via the EPICS software distribution web page.
 
           ANSI C compiler or GNU gcc compiler.
-         
+
           EPICS base distribution, R3.14.8 or later, available
           from http://aps.anl.gov/...
 
-          GNU make, V3.70 or later.
+          GNU make, V3.81 or later.
 
-          Perl, version 5.003 or later
+          Perl, version 5.8.1 or later
  
 Known conditional software requirements:
 
         X11 is needed by the following extensions
-          alh, adt, ar, burt, dp, gdct313, mdct, km, libUnix, medm, probe,
-          probeII, stripTool, caTCL, tcl, xmca, xmseq, sga
-          motifButton, medm_cebaf, adt, popup, namecapture, SDDS/SDDSaps
+          alh, burt, medm, probe, stripTool
 
         Motif is needed by the following extensions
-          alh, adt, ar, burt, dp, km, medm, probe, probeII, StripTool,
-          xmca, xmseq, motifButton, medm_cebaf, adt, popup, sga
-          namecapture, SDDS/SDDSaps
-
-        openwin3 is needed by the following extensions
-          ar/ar
-
-        Wingz is needed by the following extensions
-          wingz
-
-        Mathematica is needed by the following extensions
-          math
+          alh, burt, medm, probe, StripTool
 
         Xrtgraph is needed by the following extensions
-          medm, medm_cebaf
-
-        Interviews (Unidraw) is needed by the following extensions
-          gdct313
+          medm
 
         Tk-tcl is needed by the following extensions
-          ar/arrtk, caTCL, tcl, tcl_select, dct, casr
-
-        Blt is needed by the following extensions
-          ar/arrtk, caTCL
-
-        Idl is needed by the following extensions
-          pvwave, tcl/apswish, tcl/interpreters/tcl_it ezcaIDL
+          casr
 
         Java is needed by the following extensions
-          dbStaticJava, doubleLinkList, jca, Jdct, jca, jprobe
+          jca, caj, vdct
 
 Extensions build prerequisites
 
@@ -145,12 +122,6 @@ Extensions build prerequisites
           Your extensions/configure directory must be present and the 
           CONFIG_SITE* files properly configured prior to building an extension.
 
-        Build in configure first
-
-          You must do a build in the extensions/configure directory before
-          building any extensions and you must rebuild in configure each time 
-          the configure/RELEASE file is modified.
-
 Extensions build commands 
 
         Build a single extension (e.g. extension xyz):
@@ -164,6 +135,7 @@ Extensions build commands
             gmake install    - To build and install the extension.
             gmake clean      - To clean temporary object files.  Clean will
                                remove ALL O.<arch> subdirectoriess.
+            gmake archclean  - Removes O.<arch> dirs but not O.Common dir
             gmake rebuild    - To clean, build and install the extension.
 
         "Partial" build commands:
@@ -186,10 +158,20 @@ Extensions build commands
 
           cd epics/extensions
 
-          gmake            - To build and install all extensions.
-          gmake clean      - To clean temporary object files.  Clean will
-                             remove ALL O.<host_arch> subdirectories.
-          gmake rebuild    - To clean, build, and install all extensions.
+          gmake                - To build and install all extensions.
+          gmake clean          - To clean temporary object files.  Clean will
+                                 remove ALL O.<host_arch> subdirectories.
+          gmake rebuild        - To clean, build, and install all extensions.
+
+        Uninstalling all extensions
+
+          gmake uninstall      - Remove install directories created by this hostarch.
+          gmake realuninstall  - Removes ALL install dirs
+          gmake distclean      - Same as realclean cvsclean realuninstall.
+
+        Listing all gmake target commands
+
+          gmake help           - Prints this list of valid make targets 
 
           To build all extensions present in an extensions tree using one 
           gmake command the DIRS list definition in extensions/src/Makefile 
