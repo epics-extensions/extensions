@@ -11,6 +11,9 @@
 
 -include $(TOP)/configure/os/CONFIG_SITE.Common.Common
 
+SHRLIB_DEPLIB_DIRS += /home/phoebus/JBA/epics/extensionslib/$(T_A)
+PROD_DEPLIB_DIRS += /home/phoebus/JBA/epics/extensions/lib/$(T_A)
+
 #X11_LIB=/usr/X11R6/lib
 #X11_INC=/usr/X11R6/include/X11
 #MOTIF_LIB=/usr/X11R6/lib
@@ -55,10 +58,10 @@ CLAPACK_LIB    = /usr/local/oag/3rdParty/ATLAS/Linux_Core2Duo32SSE3/lib
 ATLAS_LIB      = /usr/local/oag/3rdParty/ATLAS/Linux_Core2Duo32SSE3/lib
 ATLAS_INCLUDE  = /usr/local/oag/3rdParty/ATLAS/Linux_Core2Duo32SSE3/include
 
-# Define XRTGRAPH_EXTENSIONS = YES only if using XRT/graph 3.x
-#   and you want the extensions for MEDM
-XRTGRAPH_EXTENSIONS = YES
-XRTGRAPH = /usr/local/xrtgraph
-# Define SCIPLOT = YES if no XRT/graph 3.x
-#SCIPLOT=YES
+# XRTGRAPH and SCIPLOT used by medm
+# Define XRTGRAPH_EXTENSIONS = YES if using XRT/graph 3.x or later
+#XRTGRAPH_EXTENSIONS = YES
+#XRTGRAPH = /usr/local/xrtgraph
+# Define SCIPLOT = YES if no XRT/graph
+SCIPLOT = YES
 
