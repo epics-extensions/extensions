@@ -11,9 +11,6 @@
 
 -include $(TOP)/configure/os/CONFIG_SITE.Common.Common
 
-SHRLIB_DEPLIB_DIRS += /home/phoebus/JBA/epics/extensionslib/$(T_A)
-PROD_DEPLIB_DIRS += /home/phoebus/JBA/epics/extensions/lib/$(T_A)
-
 #X11_LIB=/usr/X11R6/lib
 #X11_INC=/usr/X11R6/include/X11
 #MOTIF_LIB=/usr/X11R6/lib
