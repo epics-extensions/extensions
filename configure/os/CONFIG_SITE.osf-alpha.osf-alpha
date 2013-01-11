@@ -20,7 +20,11 @@ INTERVIEWS_BIN=/usr/local/interviews/bin/O.alpha
 OPENWIN =
 WINGZ =
 MATHEMATICA =
-XRTGRAPH = /usr/local/xrtgraph
+# XRTGRPAH and SCIPLOT are used by medm extension
+# Define XRTGRAPH_EXTENSIONS = YES if using XRT/graph 3.x or later
+#XRTGRAPH_EXTENSIONS = YES
+#XRTGRAPH = /usr/local/xrtgraph
+SCIPLOT = YES
 QUESTWIN =
 IDL =
 JAVA_DIR=/usr/local/java
