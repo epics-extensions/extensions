@@ -38,10 +38,13 @@ IV_LIB=/usr/local/interviews/lib/O.solaris
 WINGZ_INC = /opt/local/Wingz2/incl
 WINGZ_LIB = /opt/local/Wingz2/lib
 #MATHEMATICA = /usr/local/math
-# Define XRTGRAPH_EXTENSIONS = YES only if using XRT/graph 3.x
-#   and you want the extensions for MEDM
-XRTGRAPH_EXTENSIONS = YES
-XRTGRAPH = /opt/local/xrtgraph
+
+# XRTGRAPH and SCIPLOT are used by medm
+# Define XRTGRAPH_EXTENSIONS = YES if using XRT/graph 3.x or later
+#XRTGRAPH_EXTENSIONS = YES
+#XRTGRAPH = /opt/local/xrtgraph
+SCIPLOT = YES
+
 QUESTWIN = /usr/local/questwin
 
 TK_LIB = /opt/local/lib
@@ -60,7 +63,7 @@ IDLRPC = $(IDL)/external/rpc.solaris
 # sun 5.4
 #JAVA_DIR=/opt/local/java
 # sun 5.6
-JAVA_DIR=/usr/java
+JAVA_DIR=/usr
 JAVA_INC=$(JAVA_DIR)/include
 
 ZLIB_PREFIX = /usr/local/oag
