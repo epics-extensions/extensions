@@ -83,11 +83,10 @@ WINGZ_LIB =
 MATHEMATICA =
 QUESTWIN =
 
-# Define XRTGRAPH_EXTENSIONS = YES only if using XRT/graph 3.x
-#   and you want the extensions for MEDM
-XRTGRAPH_EXTENSIONS = NO
-#XRTGRAPH =
-
+# XRTGRPAH and SCIPLOT are used by medm extension
+# Define XRTGRAPH_EXTENSIONS = YES if using XRT/graph 3.x or later
+#XRTGRAPH_EXTENSIONS = YES
+#XRTGRAPH = /usr/local/xrtgraph
 SCIPLOT = YES
 
 # z library created in SDDS extension
