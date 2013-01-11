@@ -11,8 +11,10 @@
 
 -include $(TOP)/configure/os/CONFIG_SITE.solaris-sparc.solaris-sparc
 
-#XRTGRAPH_EXTENSIONS =
-#XRTGRAPH =
+# XRTGRAPH and SCIPLOT used by medm
+# Define XRTGRAPH_EXTENSIONS = YES if using XRT/graph 3.x or later
+#XRTGRAPH_EXTENSIONS = YES
+#XRTGRAPH = /usr/local/xrtgraph
 SCIPLOT=YES
 
 X11_LIB = /usr/lib
