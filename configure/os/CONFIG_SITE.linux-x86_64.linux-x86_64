@@ -28,9 +28,19 @@ ATLAS_INCLUDE  = /usr/local/oag/3rdParty/ATLAS/Linux_Core2Duo64SSE3/include
 JAVA_DIR=/usr
 
 # Sciplot and XRTgraph used by medm
-SCIPLOT=YES
 #XRTGRAPH_EXTENSIONS = YES
-#XRTGRAPH = /usr/local/xrtgraph
+#XRTGRAPH = /usr/local/xrtgraph64
 XRTGRAPH_EXTENSIONS =
 XRTGRAPH =
+SCIPLOT=YES
+
+# Ubuntu 12 on 64-bit has X11 at /usr/lib/x86_64-linux-gnu, Motif at /usr/lib
+#X11_LIB=/usr/lib/x86_64-linux-gnu
+#X11_INC=/usr/include/X11
+#MOTIF_LIB=/usr/lib
+#MOTIF_INC=/usr/include
+
+# Ubuntu 12 64-bit is at Python 2.6
+#PYTHON_DIR=/usr/lib/python2.6
+#PYTHON_INCLUDE=/usr/include/python2.6
 
