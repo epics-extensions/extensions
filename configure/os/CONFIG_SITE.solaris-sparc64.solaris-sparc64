@@ -11,6 +11,9 @@
 
 -include $(TOP)/configure/os/CONFIG_SITE.solaris-sparc.solaris-sparc
 
+ARCH_DEP_CFLAGS = -m64 -xarch=sparc
+ARCH_DEP_LDFLAGS = -m64 -xarch=sparc
+
 FORCE_ZLIB_BUILD=YES
 
 CLAPACK_LIB = /usr/local/oag/3rdParty/CLAPACK/SunOS_SunUSIII_4/lib
