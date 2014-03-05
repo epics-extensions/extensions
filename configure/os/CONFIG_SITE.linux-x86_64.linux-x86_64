@@ -24,6 +24,9 @@ MOTIF_INC=/usr/include
 CLAPACK_LIB    = /usr/local/oag/3rdParty/ATLAS/Linux_Core2Duo64SSE3/lib
 ATLAS_LIB      = /usr/local/oag/3rdParty/ATLAS/Linux_Core2Duo64SSE3/lib
 ATLAS_INCLUDE  = /usr/local/oag/3rdParty/ATLAS/Linux_Core2Duo64SSE3/include
+INTEL_MKL_LIB  = /usr/local/oag/3rdParty/IntelMKL-11.1/lib/intel64
+INTEL_MKL_INCLUDE = /usr/local/oag/3rdParty/IntelMKL-11.1/include
+
 
 JAVA_DIR=/usr
 
