@@ -1,0 +1,6 @@
+-include /configure/os/CONFIG_SITE.linux-x86.linux-x86
+
+X11_LIB=/usr/lib/arm-linux-gnueabihf
+X11_INC=/usr/include
+MOTIF_LIB=/usr/lib/arm-linux-gnueabihf
+MOTIF_INC=/usr/include
