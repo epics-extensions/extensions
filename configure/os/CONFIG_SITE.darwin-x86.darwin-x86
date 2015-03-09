@@ -28,10 +28,10 @@ PYTHON_INCLUDE=/System/Library/Frameworks/Python.framework/Versions/2.3/include/
 #
 # XDarwin
 #
-X11_LIB=/usr/X11R6/lib
-X11_INC=/usr/X11R6/include
-XPM_LIB=/usr/X11R6/lib
-XPM_INC=/usr/X11R6/include
+#X11_LIB=/usr/X11R6/lib
+#X11_INC=/usr/X11R6/include
+#XPM_LIB=/usr/X11R6/lib
+#XPM_INC=/usr/X11R6/include
 
 #
 # Fink OpenMotif
@@ -44,6 +44,11 @@ XPM_INC=/usr/X11R6/include
 #
 MOTIF_LIB=/opt/local/lib
 MOTIF_INC=/opt/local/include
+#
+# DarwinPorts X11
+#
+X11_LIB=/opt/local/lib
+X11_INC=/opt/local/include
 
 #
 # Interviews
