@@ -10,6 +10,7 @@
 #
 
 -include $(TOP)/configure/os/CONFIG_SITE.Common.Common
+-include $(TOP)/configure/os/CONFIG_SITE.Common.darwinCommon
 
 PYTHON_DIR=/usr/lib/python2.2
 PYTHON_INCLUDE=/System/Library/Frameworks/Python.framework/Versions/2.3/include/python2.3
@@ -35,14 +36,14 @@ XPM_INC=/usr/X11R6/include
 #
 # Fink OpenMotif
 #
-MOTIF_LIB=/sw/lib
-MOTIF_INC=/sw/include
+#MOTIF_LIB=/sw/lib
+#MOTIF_INC=/sw/include
 
 #
 # DarwinPorts OpenMotif
 #
-#MOTIF_LIB=/opt/local/lib
-#MOTIF_INC=/opt/local/include
+MOTIF_LIB=/opt/local/lib
+MOTIF_INC=/opt/local/include
 
 #
 # Interviews
