@@ -1,0 +1,16 @@
+#
+# $Id$
+#
+# Site Specific Configuration Information
+# Only the local epics system manager should modify this file
+
+# Where to find utilities/libraries
+#       If you do not have a certain product,
+#       leave the line empty.
+#
+
+X11_LIB=/usr/lib/aarch64-linux-gnu
+X11_INC=/usr/include/X11
+MOTIF_LIB=/home/ubuntu/lesstif/lib
+MOTIF_INC=/home/ubuntu/lesstif/include
+
