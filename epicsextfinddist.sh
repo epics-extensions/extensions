@@ -23,13 +23,13 @@ case "$tmpdist" in
   [dD]ebian*9*)
     echo Debian9
     ;;
-  Raspbian.*8*)
+  Raspbian*8*)
     echo Raspbian8
     ;;
-  Raspbian.*9*)
+  Raspbian*9*)
     echo Raspbian9
     ;;
   *)
-    echo Unsupported
+    echo Unsupported $tmpdist
     ;;
 esac
