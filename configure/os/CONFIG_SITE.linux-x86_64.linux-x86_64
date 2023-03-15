@@ -43,6 +43,21 @@ SCIPLOT=YES
 #MOTIF_LIB=/usr/lib
 #MOTIF_INC=/usr/include
 
+LINUX_DISTRO = $(shell sh -c '$(TOP)/epicsextfinddist.sh || echo PWD=$$PWD TOP=$(TOP)')
+
+ifeq ($(shell expr "$(LINUX_DISTRO)" : 'Debian[89]'),7)
+    X11_LIB=/usr/lib/x86_64-linux-gnu/
+    X11_INC=/usr/include
+    MOTIF_LIB=/usr/lib/x86_64-linux-gnu
+    MOTIF_INC=/usr/include
+endif
+
+build: echolinuxdistro
+
+echolinuxdistro:
+	@echo Info from CONFIG_SITE.linux-x86_64.linux-x86_64: LINUX_DISTRO=$(LINUX_DISTRO)
+
+
 # Ubuntu 12 64-bit is at Python 2.6
 #PYTHON_DIR=/usr/lib/python2.6
 #PYTHON_INCLUDE=/usr/include/python2.6
